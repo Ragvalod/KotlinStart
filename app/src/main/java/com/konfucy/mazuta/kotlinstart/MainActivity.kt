@@ -1,46 +1,38 @@
 package com.konfucy.mazuta.kotlinstart
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.os.PersistableBundle
+import android.view.View
+import android.widget.Button
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+
+
+    var a = 0;
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //Использование логов
-        Log.d("MyLog", "OnCreate")
+        //val text = findViewById<TextView>(R.id.textView)
+
+
+        val button = findViewById<Button>(R.id.button)
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        Log.d("MyLog", "onStart")
-    }
+    fun onClickTest(view: View) {
+        val text = findViewById<TextView>(R.id.textView)
+        a++
+        if (a % 2 == 0) {
+            text.text = "www"
+        } else {
+            text.text = "RRR"
+        }
 
-    override fun onPause() {
-        super.onPause()
-        Log.d("MyLog", "onPause")
-    }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("MyLog", "onDestroy")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("MyLog", "onResume")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d("MyLog", "onStop")
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.d("MyLog", "onRestart ")
     }
 }
