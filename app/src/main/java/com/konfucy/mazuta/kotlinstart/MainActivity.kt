@@ -9,19 +9,23 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
+    //Изменяемая переменная
+    var textTest = "0"
 
-    var a = 0;
+    //Неизменяемая переменная (КОНСТАНТА)
+    val intTest = 0
+
+
+    var a = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //val text = findViewById<TextView>(R.id.textView)
-
-
         val button = findViewById<Button>(R.id.button)
 
+        textTest = (intTest + 5).toString()
     }
 
     fun onClickTest(view: View) {
